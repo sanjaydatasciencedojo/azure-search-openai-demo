@@ -5,17 +5,24 @@
     "_generator": {
       "name": "bicep",
       "version": "0.18.4.5664",
-      "templateHash": "6165628712718318198"
+      "templateHash": "17353479393681697630"
     }
   },
   "parameters": {
+    "guidValue": {
+      "type": "string",
+      "defaultValue": "[newGuid()]"
+    },
+    "unqiuestring": {
+      "type": "string",
+      "defaultValue": "[uniqueString(parameters('guidValue'))]"
+    },
     "environmentName": {
       "type": "string",
       "metadata": {
         "description": "Name of the the environment which is used to generate a short unique hash used in all resources."
       },
-      "maxLength": 64,
-      "minLength": 1
+      "maxLength": 64
     },
     "location": {
       "type": "string",
@@ -26,23 +33,23 @@
     },
     "appServicePlanName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('{0}plan', parameters('unqiuestring'))]"
     },
     "backendServiceName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('{0}backendservice', parameters('unqiuestring'))]"
     },
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
     },
     "searchServiceName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('srch-{0}', parameters('unqiuestring'))]"
     },
     "searchServiceResourceGroupName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
     },
     "searchServiceResourceGroupLocation": {
       "type": "string",
@@ -58,11 +65,11 @@
     },
     "storageAccountName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('{0}storage', parameters('unqiuestring'))]"
     },
     "storageResourceGroupName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
     },
     "storageResourceGroupLocation": {
       "type": "string",
@@ -74,11 +81,11 @@
     },
     "openAiServiceName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('{0}-openai', parameters('unqiuestring'))]"
     },
     "openAiResourceGroupName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
     },
     "openAiResourceGroupLocation": {
       "type": "string",
@@ -90,11 +97,11 @@
     },
     "formRecognizerServiceName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('formrecognizer-{0}', parameters('unqiuestring'))]"
     },
     "formRecognizerResourceGroupName": {
       "type": "string",
-      "defaultValue": ""
+      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
     },
     "formRecognizerResourceGroupLocation": {
       "type": "string",
