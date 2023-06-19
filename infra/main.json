@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.18.4.5664",
-      "templateHash": "17353479393681697630"
+      "templateHash": "5959837928731788258"
     }
   },
   "parameters": {
@@ -26,6 +26,7 @@
     },
     "location": {
       "type": "string",
+      "defaultValue": "eastus",
       "metadata": {
         "description": "Primary location for all resources"
       },
