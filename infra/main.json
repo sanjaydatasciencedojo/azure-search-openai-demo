@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.18.4.5664",
-      "templateHash": "5959837928731788258"
+      "templateHash": "387473918963970760"
     }
   },
   "parameters": {
@@ -42,7 +42,7 @@
     },
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
+      "defaultValue": "[parameters('location')]"
     },
     "searchServiceName": {
       "type": "string",
@@ -50,7 +50,7 @@
     },
     "searchServiceResourceGroupName": {
       "type": "string",
-      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
+      "defaultValue": "[parameters('location')]"
     },
     "searchServiceResourceGroupLocation": {
       "type": "string",
@@ -70,7 +70,7 @@
     },
     "storageResourceGroupName": {
       "type": "string",
-      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
+      "defaultValue": "[parameters('location')]"
     },
     "storageResourceGroupLocation": {
       "type": "string",
@@ -86,7 +86,7 @@
     },
     "openAiResourceGroupName": {
       "type": "string",
-      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
+      "defaultValue": "[parameters('location')]"
     },
     "openAiResourceGroupLocation": {
       "type": "string",
@@ -102,7 +102,7 @@
     },
     "formRecognizerResourceGroupName": {
       "type": "string",
-      "defaultValue": "[format('rg-{0}', parameters('unqiuestring'))]"
+      "defaultValue": "[parameters('location')]"
     },
     "formRecognizerResourceGroupLocation": {
       "type": "string",
